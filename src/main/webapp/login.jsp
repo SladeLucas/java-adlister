@@ -5,6 +5,7 @@
     <title>Login</title>
 </head>
 <body>
+<%@ include file="partials/navbar.jsp" %>
 <form action="/login.jsp" method="post">
     <div class="container">
         <label>Username : </label>
