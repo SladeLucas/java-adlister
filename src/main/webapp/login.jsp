@@ -1,34 +1,31 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>login page</title>
+    <title>Login</title>
 </head>
 <body>
-<h1>Login Page</h1>
-<div>
-    <form action = "login.jsp" method = "POST">
-        <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+<form action="/login.jsp" method="post">
+    <div class="container">
+        <label>Username : </label>
+        <input type="text" placeholder="Enter Username" name="username" required>
 
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <button type="submit" value = "Submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
+        <label>Password : </label>
+        <input type="password" placeholder="Enter Password" name="password">
+        <button type="submit">Login</button>
+        <%
+            if (request.getMethod().equalsIgnoreCase("POST")) {
+                String name = request.getParameter("username");
+                String password = request.getParameter("password");
+                if (name.equals("admin") && password.equals("password")) {
+                    response.sendRedirect("/profile.jsp");
+                }
+            }
+        %>
+    </div>
+</form>
 
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-    </form>
-</div>
+
 </body>
 </html>
