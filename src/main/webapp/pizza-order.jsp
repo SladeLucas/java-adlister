@@ -53,9 +53,9 @@
       <label for="sausage">Sausage</label>
     </div>
   </fieldset>
-  <label for="address">Delivery Address</label>
-  <input type="text" name="address"/>
+    <label>Delivery Address</label>
+    <input type="text" name="address"/>
   <button type="submit">Submit</button>
-</form>
-</body>
+  </form>
+  </body>
 </html>
