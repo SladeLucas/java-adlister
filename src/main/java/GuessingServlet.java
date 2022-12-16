@@ -10,7 +10,7 @@ public class GuessingServlet extends HttpServlet{
         if (guess.equals("1")) {
 
             response.sendRedirect("/CorrectServlet");
-        } else if (guess.equals(2) || guess.equals(3)){
+        } else if (guess.equals("2") || guess.equals("3")){
             response.sendRedirect("/IncorrectServlet");
         } else {
             response.sendRedirect("/guess.jsp");

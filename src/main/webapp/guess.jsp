@@ -11,7 +11,7 @@
     <title>Guessing Game!</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/GuestServlet" action="post">
+<form action="${pageContext.request.contextPath}/GuessingServlet" action="post">
     <label>Pick a Number Between 1 and 3... </label>
     <input type="text" name="guess">
 
