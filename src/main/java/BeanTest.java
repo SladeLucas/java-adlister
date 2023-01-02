@@ -19,9 +19,32 @@ public class BeanTest {
         theIncredibleTrueStory.setSales(102934);
         theIncredibleTrueStory.setRelease_date(2017);
 
+       Author charles = new Author();
+        charles.setFirstName("Charles");
+        charles.setLastName("Dickens");
+       Author paulo = new Author();
+        paulo.setLastName("Coelho");
+        paulo.setFirstName("Paulo");
+
+       Quote idk = new Quote();
+        idk.setId(0);
+        idk.setAuthor(charles);
+        idk.setContent("There is a great white wale out there");
+       Quote omen = new Quote();
+        omen.setId(1);
+        omen.setAuthor(paulo);
+        omen.setContent("Look for the signs of life");
+
        List<Album> albums = new ArrayList<Album>();
         albums.add(theForeverStory);
         albums.add(theIncredibleTrueStory);
+       List<Author> authors = new ArrayList<Author>();
+        authors.add(charles);
+        authors.add(paulo);
+       List<Quote> quotes = new ArrayList<Quote>();
+        quotes.add(idk);
+        quotes.add(omen);
+
 
        for(Album a : albums){
             System.out.println("Name: " + a.getName());
@@ -29,6 +52,11 @@ public class BeanTest {
             System.out.println("Genre: " + a.getGenre());
             System.out.println("Release Date: " + a.getRelease_date());
             System.out.println("--------------------");
+        }
+
+        for(Quote q : quotes){
+            System.out.println("Author: " + q.getAuthor().getFirstName() + " " + q.getAuthor().getLastName());
+            System.out.println("Quote: " + q.getContent());
         }
     }
 }
